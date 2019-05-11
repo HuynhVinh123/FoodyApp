@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorBackgroundTrangChu"
+    android:id="@+id/activity_main"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarTrangChu"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/edtTimKiem"
+                    android:layout_width="114dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_edittimkiem"
+                    android:drawableLeft="@drawable/glass"
+                    android:hint="@string/TimKiem"
+                    android:inputType="number"
+                    android:padding="4dp"
+                    android:textSize="13dp" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:id="@+id/txtTimKiem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="Tìm kiếm"
+                    android:background="@drawable/custom_texttimkiem"
+                    android:layout_marginRight="4dp"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:inputType="number"
+
+                    />
+
+
+            </LinearLayout>
+            <SearchView
+                android:id="@+id/search"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:iconifiedByDefault="false"
+
+                >
+
+                <requestFocus />
+            </SearchView>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorBackgroundTrangChu"
+            >
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/nestScrollViewOdau"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <android.support.v7.widget.CardView
+                        style="@style/CardView.SS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+
+                                <com.example.huynhvinh.appfoody_firebase.Slider
+                                    android:id="@+id/banner_slider1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="220dp"
+                                    app:slider_animateIndicators="true"
+                                    app:slider_emptyView="@layout/layout_empty_view"
+                                    app:slider_indicatorSize="4dp"
+                                    app:slider_interval="0"
+                                    app:slider_loopSlides="true"
+                                    app:slider_selectedSlideIndicator="@drawable/indicator_circle_selected"
+                                    app:slider_unselectedSlideIndicator="@drawable/indicator_circle_unselected"
+                                    />
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerODau"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
+
+                    <ProgressBar
+                        android:id="@+id/progressBarOdau"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        />
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</LinearLayout>
